@@ -46,7 +46,7 @@ https://www.google.com/recaptcha/intro/
 
 Choose reCAPTCHA V2, and specify your local (and eventually production) domain name, as illustrated in the image below.
 
-![](https://i.imgur.com/2fhwUBJ.png)
+![](https://i.imgur.com/KdXLAW0.png)
 
 Once submitted, you'll see two important keys that should be reference in your **.env** file.
 
