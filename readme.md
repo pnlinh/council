@@ -40,23 +40,6 @@ php artisan migrate
 
 ### Step 3.
 
-reCAPTCHA is a Google tool to help prevent forum spam. You'll need to create a free account (don't worrry, it's easy).
-
-https://www.google.com/recaptcha/intro/
-
-Choose reCAPTCHA V2, and specify your local (and eventually production) domain name, as illustrated in the image below.
-
-![](https://i.imgur.com/KdXLAW0.png)
-
-Once submitted, you'll see two important keys that should be reference in your **.env** file.
-
-```
-RECAPTCHA_KEY=
-RECAPTCHA_SECRET=
-```
-
-### Step 4.
-
 Until an administration portal is available, manually insert any number of "channels" (think of these as forum categories) into the "channels" table in your database.
 
 Once finished, clear your server cache, and you're all set to go!
@@ -65,6 +48,6 @@ Once finished, clear your server cache, and you're all set to go!
 php artisan cache:clear
 ```
 
-### Step 5.
+### Step 4.
 
 Use your forum! Visit `http://council.test/threads` to create a new account and publish your first thread.
