@@ -1,0 +1,47 @@
+<?php
+
+namespace App\Notifications;
+
+use Illuminate\Bus\Queueable;
+use Illuminate\Notifications\Notification;
+
+// use Illuminate\Contracts\Queue\ShouldQueue;
+// use Illuminate\Notifications\Messages\MailMessage;
+
+class YouWereMentioned extends Notification
+{
+    use Queueable;
+
+    protected $reply;
+
+    public function __construct($reply)
+    {
+        $this->reply = $reply;
+    }
+
+    /**
+     * Get the notification's delivery channels.
+     *
+     * @param  mixed  $notifiable
+     * @return array
+     */
+    public function via($notifiable)
+    {
+        return ['database'];
+    }
+
+    /**
+     * Get the array representation of the notification.
+     *
+     * @param  mixed  $notifiable
+     * @return array
+     */
+    public function toArray($notifiable)
+    {
+        return [
+            'notification_message' => str_limit($this->reply->owner->name . ' mentioned you in ' . $this->reply->thread->title, 50),
+            'message' => $this->reply->owner->name . ' mentioned you in ' . $this->reply->thread->title,
+            'link' => $this->reply->path()
+        ];
+    }
+}
