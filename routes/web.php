@@ -13,11 +13,10 @@
 
 Auth::routes();
 
-Route::get('/', function () {
-    return redirect('/home');
-});
+Route::redirect('/', '/threads');
+Route::redirect('/home', '/threads');
 
-Route::get('/home', 'HomeController@index');
+// Route::get('/home', 'HomeController@index');
 
 Route::get('/threads', 'ThreadsController@index')->name('threads');
 Route::get('/threads/create', 'ThreadsController@create')->middleware('must-be-confirmed')->name('threads.create');
