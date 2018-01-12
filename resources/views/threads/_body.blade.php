@@ -27,7 +27,7 @@
             <span class="flex">
                 <img src="{{ $thread->creator->avatar_path }}" width="32" height="32" class="avatar">
                 <a href="{{ route('profile', $thread->creator) }}">
-                    {{ $thread->creator->name }}
+                    {{ $thread->creator->name }} ({{ $thread->creator->reputation }} XP)
                 </a> posted @{{ title }}
             </span>
         </div>
