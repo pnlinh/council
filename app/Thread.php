@@ -28,6 +28,8 @@ class Thread extends Model
 
         static::created(function ($thread) {
             $thread->update(['slug' => $thread->title]);
+
+            Reputation::award($thread->creator, Reputation::THREAD_WAS_PUBLISHED);
         });
     }
 
@@ -132,6 +134,7 @@ class Thread extends Model
     public function markBestReply($reply)
     {
         $this->update(['best_reply_id' => $reply->id]);
+        Reputation::award($reply->owner, Reputation::BEST_REPLY_AWARDED);
     }
 
     public function resolvedStatus()
