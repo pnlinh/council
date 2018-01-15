@@ -1,4 +1,4 @@
-# Council - OSS Forum
+# Council - OSS Forum [![Build Status](https://travis-ci.org/cashlion/council.svg?branch=master)](https://travis-ci.org/cashlion/council)
 
 > Larcasts OSS Demo
 
