@@ -42,7 +42,7 @@ class ThreadsController extends Controller
             'title' => 'required|spamfree',
             'body' => 'required|spamfree',
             'channel_id' => 'required|exists:channels,id',
-            'g-recaptcha-response' => [$recaptcha]
+            'g-recaptcha-response' => ['required',$recaptcha]
         ]);
 
         $thread = auth()->user()->createThread([
